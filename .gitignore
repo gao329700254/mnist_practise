@@ -1,1 +1,5 @@
 *.pyc
+dog_classification/data/*
+*.index
+*.data-*
+checkpoint
