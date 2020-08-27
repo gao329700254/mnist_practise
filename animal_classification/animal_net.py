@@ -19,7 +19,7 @@ class AnimalNet:
             layers.MaxPooling2D(),
             layers.Flatten(),
             layers.Dense(128, activation='relu'),
-            layers.Dense(len(self.class_names))
+            layers.Dense(len(self.class_names), activation='softmax')
         ])
 
         self.model.compile(
@@ -36,8 +36,8 @@ class AnimalNet:
             callbacks=[callbacks]
         )
 
-    def predict(self, image):
-        self.model.predict(image)
+    def probabilities(self, images):
+        return [ class_probs for class_probs in self.model(next(iter(images))) ]
 
     def evaluate(self, dataset):
         self.model.evaluate(dataset, verbose=2)

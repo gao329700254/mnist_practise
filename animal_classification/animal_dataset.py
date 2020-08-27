@@ -27,3 +27,6 @@ class AnimalDataSet:
             image_size=(img_height, img_width),
             batch_size=batch_size
         )
+
+    def class_name(self, path):
+        return pathlib.Path(path).parent.name

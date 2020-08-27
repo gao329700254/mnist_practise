@@ -5,7 +5,7 @@ import argparse
 import os
 import json
 from google_search import *
-from img_resize import *
+from img_preprocess import *
 
 parser = argparse.ArgumentParser(argument_default=argparse.SUPPRESS)
 parser.add_argument("-t", "--target",  help="target name", type=str, required=True)
